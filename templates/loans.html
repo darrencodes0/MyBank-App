@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loans</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/login_and_register.css">
+</head>
+<body>
+    <h1>Loans</h1>
+    <img class="loan_icon" src="static/images/loan-icon.png">
+
+    <a href="{{ url_for('pay_loan') }}">
+      <button class="form__submit form__input" id="withdraw-button" type="submit">Pay Loan</button>
+      </a>
+    
+    <a href="{{ url_for('request_loan') }}">
+      <button class="form__submit form__input" id="withdraw-button" type="submit">Request Loan</button>
+      </a>
+    
+    <a href="{{ url_for('accountPage') }}" class="register_button">Back</a>
+</body>
+</html>

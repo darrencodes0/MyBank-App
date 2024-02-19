@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Depositing</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/login_and_register.css">
+</head>
+<body>
+    <h1>Deposit into Account</h1>
+    <h1>Your balance is {{ current_balance }}$</h1>
+    <form method="POST">   
+      <div class="form-set">
+        <label for="amount" class="form__label">Amount:</label>
+        <input type="number" name="amount" id="amount" class="form__label" step="0.01" min="0.01">
+      </div>
+    
+      <div class="form-set">
+        <input class="form__submit form__input" type="submit" value="Deposit" step="0.01" min="0.01">
+        <a href="{{ url_for('accountPage') }}" class="register_button">Back</a>
+      </div>
+    </form>
+
+    <div class="container top-half">
+      {% if message %}
+        <p class="text">{{ message }}</p>
+    {% endif %}
+    </div>
+    
+    <div class="container bottom-half">
+      <h1 class="trusted_bank_label">The most trusted bank in America</h1>
+      <div class="icon_container">
+        <img class="money_icon" src="static/images/money-icon.png">
+        <img class="employee_icon" src="static/images/bank-employee.png">
+        <img class="stocks_icon" src="static/images/stocks-icon.png">
+      </div>
+      <div>
+        <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
+      </div>
+    </div>
+</body>
+</html>
