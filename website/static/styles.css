@@ -11,15 +11,57 @@ body{
   flex-direction: column;
 }
 
+.name-header{
+  background-color: green ;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 3px black;
+}
+
+.top-section{
+  position: fixed;
+  width: 100%;
+  flex: 1;
+  top: 0;
+  left: 0;
+  background: green;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  z-index: 999;
+}
+
+.bank-info{
+  background-color: green;
+  border-radius: 5px;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  margin-right: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.bank-info:hover{
+  opacity: 0.8;
+}
+
+.middle-section {
+  flex: 3; /* Takes up 75% of the container height */
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
 .container{
   flex: 1;
 }
 
-.bottom-half {
+.bottom-section {
+  flex: 1; /* Takes up 25% of the container height */
   background-color: green;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
+  border: 2px solid black; /* Shorthand for border properties */
 }
 
 .form-set{
@@ -42,12 +84,6 @@ body{
   margin-right: 20px;
 }
 
-.register_button{
-  padding: 0px;
-  text-decoration: none;
-  width: 80px;
-}
-
 .account-options{
   display: flex;
   align-items: center;
@@ -59,6 +95,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 2px 2px 3px black;
 }
 
 .money_icon{
@@ -121,7 +158,11 @@ body{
 .icon_container{ 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background-color: grey;
+  border: solid;
+  border-color: white;
+  padding: 10px;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -134,44 +175,18 @@ body{
   text-decoration: underline;
 }
 
-.get_started_button{
-  border-radius: 2px;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
+.bank-button {
   text-decoration: none;
-  padding: 5px;
-  margin-top: 10px; 
-  cursor: pointer;
-  display: inline-block
-}
-
-
-.get_started_button:hover{
-  background-color: green;
-  
-  color: white;
-}
-
-.front_page_video{
-  display: block;
-  border: 3px solid black;
-}
-
-.form__submit, .register_button{
-  padding: 8px 16px;
+  font-size: 15px;
+  padding: 10px;
   background-color: unset;
   border: 2px solid black;
   border-radius: 4px;
   cursor: pointer;
+  display: inline-block; /* Ensure consistent rendering as inline-block */
 }
 
-.form__submit:hover{
-  background-color: green;
-  color: white;
-}
-
-.register_button:hover{
+.bank-button:hover {
   background-color: green;
   color: white;
 }

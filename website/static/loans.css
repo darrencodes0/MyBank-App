@@ -1,0 +1,17 @@
+.back-button{
+  width: 32px;
+  margin-top: 200px;
+}
+
+.middle-section{
+  align-items: center;
+}
+
+.middle-section img{
+  margin-top: 30px;
+}
+
+.middle-section button{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}

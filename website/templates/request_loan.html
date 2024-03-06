@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Depositing</title>
+    <title>Request Loan</title>
     <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="static/login_and_register.css">
 </head>
 <body>
-    <h1>Deposit into Account</h1>
-    <h1>Your balance is {{ current_balance }}$</h1>
+    <div class="top-section">
+      <h1 class="name-header">Request Loan</h1>
+    </div>
+    <div class="middle-section">
+      <h1><span class="bank-info">! We have a set loan interest rate at %25 !</span></h1>
+      <h1>You owe <span class="bank-info">{{ loan }}$</span> in loans</h1>
+      <h1>Your balance is <span class="bank-info">{{ current_balance }}$</span></h1>
     <form method="POST">   
       <div class="form-set">
-        <label for="amount" class="form__label">Amount:</label>
+        <label for="amount" class="form__label">Request Amount:</label>
         <input type="number" name="amount" id="amount" class="form__label" step="0.01" min="0.01">
       </div>
     
       <div class="form-set">
-        <input class="form__submit form__input" type="submit" value="Deposit" step="0.01" min="0.01">
-        <a href="{{ url_for('accountPage') }}" class="register_button">Back</a>
+        <input class="bank-button" type="submit" value="Request" step="0.01" min="0.01">
+        <a href="{{ url_for('auth.loans') }}" class="bank-button">Back</a>
       </div>
     </form>
 
@@ -25,8 +29,9 @@
         <p class="text">{{ message }}</p>
     {% endif %}
     </div>
-    
-    <div class="container bottom-half">
+    </div>
+  
+    <div class="bottom-section">
       <h1 class="trusted_bank_label">The most trusted bank in America</h1>
       <div class="icon_container">
         <img class="money_icon" src="static/images/money-icon.png">
@@ -37,5 +42,8 @@
         <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
       </div>
     </div>
+
+    <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
+
 </body>
 </html>

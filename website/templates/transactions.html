@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transactions</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/transactions.css">
+</head>
+<body>
+  <div class="top-section">
+    <h1 class="name-header">Account Transactions</h1>
+  </div>
+  <div class="middle-section">
+    {% if transactions %}
+    <ul class="transaction-list">
+        {% for transaction in transactions %}
+            <li><span class="transaction-label">{{ transaction }}</span></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No transactions in view</p>
+    {% endif %}
+    <a href="{{ url_for('auth.accountPage') }}" class="bank-button back-button">Back</a>
+  </div>
+
+  <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
+
+</body>
+</html>

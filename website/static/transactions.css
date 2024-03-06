@@ -1,0 +1,24 @@
+
+.transaction-label{
+  display: inline-block;
+  background-color: green;
+  border-radius: 5px;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.transaction-label:hover{
+  opacity: 0.8;
+}
+
+.back-button{
+  margin-left: 40px;
+  width: 32px;
+}
+
+

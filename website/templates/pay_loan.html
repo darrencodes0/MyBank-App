@@ -3,12 +3,15 @@
 <head>
     <title>Paying Loan</title>
     <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="static/login_and_register.css">
 </head>
 <body>
-    <h1>Pay off loan</h1>
-    <h1>You owe {{ loan }}$ in loans</h1>
-    <h1>Your balance is {{ current_balance }}$</h1>
+    <div class="top-section">
+      <h1 class="name-header">Paying off loan</h1>
+    </div>
+
+    <div class="middle-section">
+    <h1>You owe <span class="bank-info">{{loan}}$</span>in loans</h1>
+    <h1>Your balance is <span class="bank-info">{{ current_balance }}$</span></h1>
     <form method="POST">   
       <div class="form-set">
         <label for="amount" class="form__label">Amount to Pay:</label>
@@ -16,18 +19,19 @@
       </div>
     
       <div class="form-set">
-        <input class="form__submit form__input" type="submit" value="Pay" step="0.01" min="0.01">
-        <a href="{{ url_for('loans') }}" class="register_button">Back</a>
+        <input class="bank-button" type="submit" value="Pay" step="0.01" min="0.01">
+        <a href="{{ url_for('auth.loans') }}" class="bank-button">Back</a>
       </div>
     </form>
 
-    <div class="container top-half">
-      {% if error %}
-        <p class="text">{{ error }}</p>
+    <div>
+      {% if message %}
+        <p class="text">{{ message }}</p>
     {% endif %}
     </div>
-    
-    <div class="container bottom-half">
+  </div>
+
+    <div class="bottom-section">
       <h1 class="trusted_bank_label">The most trusted bank in America</h1>
       <div class="icon_container">
         <img class="money_icon" src="static/images/money-icon.png">
@@ -38,5 +42,8 @@
         <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
       </div>
     </div>
+
+    <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
+
 </body>
 </html>

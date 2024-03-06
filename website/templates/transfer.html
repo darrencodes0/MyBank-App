@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Transferral</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/transfer.css">
+
+</head>
+<body>
+  <div class="top-section">
+    <h1 class="name-header">Transfer/Send Funds</h1>
+  </div>
+  <div class="middle-section">
+    <p><span class="bank-info">Your balance is ${{ current_balance }}</span></p>
+    <form method="POST" onsubmit="return transfer_confirmation();">   
+      <div class="form-set">
+        <label for="amount" class="form__label">Amount to Transfer:</label>
+        <input type="number" name="amount" id="amount" class="form__label" step="0.01" min="0.01">
+      </div>
+      <div class="form-set">
+        <label for="username" class="form__label">User account's name to send funds to:</label>
+        <input type="text" name="username" id="username" class="form__label" step="0.01" min="0.01">
+      </div>
+      <div class="form-set">
+        <input class="bank-button" type="submit" value="Submit" step="0.01" min="0.01">
+        <a href="{{ url_for('auth.accountPage') }}" class="bank-button">Back</a>
+      </div>
+    </form>
+
+    <div>
+      {% if message %}
+        <p class="text">{{ message }}</p>
+    {% endif %}
+    </div>
+  </div>
+    <div class="bottom-section">
+      <h1 class="trusted_bank_label">The most trusted bank in America</h1>
+      <div class="icon_container">
+        <img class="money_icon" src="static/images/money-icon.png">
+        <img class="employee_icon" src="static/images/bank-employee.png">
+        <img class="stocks_icon" src="static/images/stocks-icon.png">
+      </div>
+      <div>
+        <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
+    <script src="{{ url_for('static', filename='transfer_confirmation.js') }}"></script>
+
+
+</body>
+</html>

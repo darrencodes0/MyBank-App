@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  overflow: auto; 
+  flex-direction: column;
+}
+
+.navigation-bar {
+  background-color:black;
+  padding: 7px 30px;
+}
+
+.navigation-buttons {
+  display: flex;
+  padding: 0; 
+  margin: 0; 
+}
+
+.navigation-buttons li {
+  
+  display: inline; 
+  flex: 1;
+}
+
+.navigation-buttons li a {
+
+  color: white; 
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 3px;
+  text-decoration: none; 
+}
+
+.navigation-buttons li a:hover {
+  text-decoration: underline;
+  background-color: white;
+  color: black;
+}
+
+.video_box{
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+}
+
+.featured_video{
+  border-color: grey;
+  border-width: 2px;
+}
+
+.info_box{
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+}
+
+.happy_guy {
+  width: 40%;
+  height: auto; /* Maintain aspect ratio */
+  border-color: grey;
+  border-width: 2px;
+  border: solid;
+  margin-left: 50px;
+}
+
+.info_box_message {
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid black; /* Adjust the border width here (2px in this example) */
+  text-shadow: 2px 2px 3px black;
+}
+
+.get_started_button {
+  display: inline-block;
+  width: 75px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom:20px;
+  background-color: white; /* Example button color */
+  color: black; /* Example text color */
+  text-decoration: none;
+  border-radius: 5px;
+  border-width: 1px;
+  border: solid;
+  border-color: black;
+  align-self: center;
+  cursor: pointer;
+}
+
+.get_started_button:hover {
+  background-color: green; /* Example color on hover */
+  color: white;
+}
+
+.bottom_label{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;   
+  text-shadow: 2px 2px 3px black;
+}
+.get_started_button{
+  width: 78px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  text-decoration: none;
+  padding: 5px;
+  margin-top: 10px; 
+  cursor: pointer;
+}
+
+
+.get_started_button:hover{
+  background-color: green;
+  color: white;
+}
