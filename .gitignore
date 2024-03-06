@@ -1,2 +1,10 @@
-__pycache__/
-*.pyc
+/env
+/__pycache_
+/sessionkey.py
+/instance
+/env
+/public
+/myenv
+/flask_session
+/static
+/test
