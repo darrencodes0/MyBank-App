@@ -1,5 +1,6 @@
 # Bank-Application
-Files are within the master branch
+(included images of the bank application)
+Program's files are within the master branch
 
 # Setup
 Install all dependencies:
