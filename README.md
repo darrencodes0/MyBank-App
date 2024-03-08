@@ -1,5 +1,4 @@
-# Bank-Application
-(included images of the bank application)  
+# Bank-Application 
 Program's files are within the master branch
 
 ## Setup
@@ -14,3 +13,4 @@ Mac/Linux:
 - python3 main.py
 
 
+# Images of Bank Application
