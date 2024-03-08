@@ -10,7 +10,7 @@ Windows:
 - python main.py   
 
 Mac/Linux:
-- python3 main.py
+- python3 main.py  
 
 
 # Images of Bank Application
