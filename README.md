@@ -12,3 +12,6 @@ Windows:
 
 Mac/Linux:
 - python3 main.py
+
+- ![accounttransaction](https://github.com/darrencodes0/MyBank-App/assets/126924973/eab7286b-0120-4a0f-ae49-66cce0207ae9)
+
