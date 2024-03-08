@@ -6,6 +6,8 @@ Install all dependencies:
 - pip install -r requirements.txt   
 
 ### To start Flask Application
+Type the following command into terminal
+
 Windows:
 - python main.py   
 
