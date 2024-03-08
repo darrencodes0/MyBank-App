@@ -4,9 +4,7 @@ Program's files are within the master branch
 
 # Setup
 Install all dependencies:
-
 - pip install -r requirements.txt -  
-To execute (Windows):
 
+To start Flask Application
 - python main.py -  
-To execute (Mac/Linux):
