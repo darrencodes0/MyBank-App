@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: grey;
   height: 100vh;
   display: flex;
   overflow: auto; 

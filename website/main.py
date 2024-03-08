@@ -1,6 +1,6 @@
 from flask import Flask
-from website.routes import auth
-from website.sessionkey import SESSION_KEY
+from routes import auth
+from sessionkey import SESSION_KEY
 
 #creates app and blueprint for routes
 def create_app():

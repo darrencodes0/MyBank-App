@@ -1,6 +1,6 @@
 from flask import Blueprint, redirect, render_template, request, session, url_for
-from website.user_info import load_user_info, save_user_info, save_user_credientials, authenticate_user
-from website.user_transactions import add_transaction, load_user_transactions
+from user_info import load_user_info, save_user_info, save_user_credientials, authenticate_user
+from user_transactions import add_transaction, load_user_transactions
 from datetime import datetime
 
 auth = Blueprint('auth', __name__)   
@@ -95,11 +95,12 @@ def deposit():
         if amount <= 0:
             return render_template("deposit.html", current_balance=current_balance, message="Invalid Amount")
         
-        amount = round(amount, 2)
+        #strips leading zeros and restricts to 2 decimal
+        amount = "{:.2f}".format(float(amount)).lstrip('0')
         
         for user_data in user_info:
             if user_data["username"] == session['username']:
-                user_data["balance"] = round(user_data["balance"] + amount, 2)
+                user_data["balance"] = round(user_data["balance"] + float(amount), 2)
                 current_balance = user_data["balance"]
                 session['balance'] = current_balance
                 save_user_info(user_info) 
@@ -190,6 +191,7 @@ def pay_loan():
                     session['loan'] = loan
                     session['balance'] = current_balance
                     save_user_info(user_info)  
+
                     add_transaction(session['username'], f"({proper_datetime}) - Paid ${amount} loans off")
                     return render_template("pay_loan.html", current_balance=current_balance, message=f"Paid ${amount} loans off", loan=loan)
                 else:
