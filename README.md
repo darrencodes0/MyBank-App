@@ -1,10 +1,10 @@
 # Bank-Application
 Files are within the master branch
 
-Setup
+# Setup
 Install all dependencies:
 
-pip install -r requirements.txt
+- pip install -r requirements.txt -
 To execute (Windows):
 
 python main.py
