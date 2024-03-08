@@ -6,6 +6,11 @@ Install all dependencies:
 - pip install -r requirements.txt   
 
 ### To start Flask Application
+Make sure your directory includes the website 
+(if not, change directory to website in the terminal):
+
+- cd website
+
 Type the following command into terminal
 
 Windows:
