@@ -1,9 +1,8 @@
-/env
-/__pycache_
+/env/
+/__pycache__/
 /sessionkey.py
-/instance
-/env
-/public
-/myenv
-/flask_session
-/test
+/instance/
+/public/
+/myenv/
+/flask_session/
+/test/
