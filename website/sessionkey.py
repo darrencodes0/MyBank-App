@@ -1,2 +1,2 @@
-SESSION_KEY = "bankop12"
+SESSION_KEY = "anythingyouwant"
 # input anything for session_key

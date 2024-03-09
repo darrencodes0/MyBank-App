@@ -1,5 +1,14 @@
-.account-options div{
+.account-options div {
   background-color: white;
   margin-top: 25px;
   margin-bottom: 5px;
+}
+
+#secret_word {
+  background-color: black;
+  color: black;
+}
+
+#secret_word:hover{
+  background-color: white;
 }

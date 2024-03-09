@@ -50,6 +50,7 @@
                 <button class="bank-button">Logout</button>
                 </a>
             </div>
+                <div id="secret_word">Your secret word to reset password: {{ secret_word }}</div>
         </div>
     </div>
 
@@ -65,7 +66,7 @@
             <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
         </div>
         </div>       
-        <!-- reference to static folder -->
+        
     <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
 </body>
 </html>

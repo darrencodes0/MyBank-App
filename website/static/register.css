@@ -1,0 +1,19 @@
+.togglePassword{
+  height: 20px;
+  width: auto;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+.togglePassword:hover{
+  color: white;
+  background-color: green;
+  opacity: 0.8;
+}
+
+.togglePassword:active{
+  opacity: 0.5;
+}

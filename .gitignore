@@ -1,6 +1,7 @@
 /env
 /__pycache_
-/sessionkey.py
+/website/__pycache_
+/website/sessionkey.py
 /instance
 /env
 /public

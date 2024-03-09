@@ -1,5 +1,5 @@
 from flask import Blueprint, redirect, render_template, request, session, url_for
-from user_info import load_user_info, save_user_info, save_user_credientials, authenticate_user
+from user_info import reset_user_password, load_user_info, save_user_info, save_user_credientials, authenticate_user
 from user_transactions import add_transaction, load_user_transactions
 from datetime import datetime
 
@@ -13,7 +13,7 @@ except FileNotFoundError:
     user_info = []
 
 # start of the application
-@auth.route("/", methods=["GET", "POST"])
+@auth.route("/", methods=["GET"])
 def start():
     return render_template("frontpage.html")
 
@@ -32,10 +32,51 @@ def login():
 
     return render_template("login.html")
 
+@auth.route("/forgotpassword", methods=["GET", "POST"])
+def reset_password():
+    message = None
+    
+    if request.method == "POST":
+        username = request.form.get("username")
+        secret_word = request.form.get("secret_word")
+        new_password = request.form.get("password")  # Get new password from form
+
+        if not username:
+            return render_template("forgotPassword.html", message="Username is not provided")
+        
+        if not secret_word:
+            return render_template("forgotPassword.html", message="Secret word is not provided")
+
+        if new_password:
+            # Check if there's a number and special character is in password
+            has_number = False
+            has_special = False
+
+            for char in new_password:
+                if char.isdigit():
+                    has_number = True
+                elif char in "!@#$%^&*()-_=+":
+                    has_special = True
+
+            if not (has_number and has_special):
+                return render_template("forgotPassword.html", message="Password must contain at least one special character and one number")
+
+            resetted = reset_user_password(user_info, username, secret_word, new_password) 
+
+            if resetted:
+                return render_template("forgotPassword.html",message="Password successfully changed")
+            else:
+                return render_template("forgotPassword.html",message="Username or/and secret word was incorrect")
+                  
+        else:
+            return render_template("forgotPassword.html", message="Password is not provided")
+
+    return render_template("forgotPassword.html", message=message)
+
+
 
 @auth.route("/registration", methods=["GET", "POST"])
 def registration():
-    message = None
     if request.method == "POST":
         new_username = request.form.get("username")
         new_password = request.form.get("password")
@@ -45,7 +86,20 @@ def registration():
                 return render_template("register.html", message="Username is already taken")
 
         if new_password:
-            save_user_credientials(user_info,new_username,new_password)
+            # Check if theres a number and special character is in password
+            has_number = False
+            has_special = False
+
+            for char in new_password:
+                if char.isdigit():
+                    has_number = True
+                elif char in "!@#$%^&*()-_=+":
+                    has_special = True
+
+            if not (has_number and has_special):
+                return render_template("register.html", message="Password must contain at least one special character and one number")
+
+            save_user_credientials(user_info, new_username, new_password)
             return redirect(url_for("auth.login"))
         else:
             return render_template("register.html", message="Password is not provided")
@@ -56,30 +110,44 @@ def registration():
 @auth.route("/accountpage", methods=["GET"])
 def accountPage():
     username = session.get('username')
-    current_balance = 0
     for user_data in user_info:
         if user_data["username"] == username:
+            #establishes info of the logged-in user to be of the current session
             loan = user_data["loan"]
             session['loan'] = loan
+            secret_word = user_data["secret_word"]
+            session['secret_word'] = secret_word
             current_balance = user_data["balance"]
             session['balance'] = current_balance
             break
 
-    return render_template("accountpage.html", user=username, current_balance=current_balance, loan=loan)
+    return render_template("accountpage.html", user=username, current_balance=current_balance, loan=loan, secret_word=secret_word)
 
 @auth.route("/logout")
 def logout():
+    #removes all information from user session so next user doesn't inherit the same information
     try:
         session.pop('username')
     except KeyError:
-        pass 
-
+        pass
+    
     try:
         session.pop('balance')
     except KeyError:
-        pass 
+        pass
+
+    try:
+        session.pop('secret_word')
+    except KeyError:
+        pass
+
+    try:
+        session.pop('loan')
+    except KeyError:
+        pass
 
     return redirect(url_for('auth.start'))
+
 
 @auth.route("/deposit", methods=["GET", "POST"])
 def deposit():
@@ -94,9 +162,6 @@ def deposit():
         
         if amount <= 0:
             return render_template("deposit.html", current_balance=current_balance, message="Invalid Amount")
-        
-        #strips leading zeros and restricts to 2 decimal
-        amount = "{:.2f}".format(float(amount)).lstrip('0')
         
         for user_data in user_info:
             if user_data["username"] == session['username']:
