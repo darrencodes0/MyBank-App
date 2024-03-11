@@ -14,12 +14,18 @@ def load_user_transactions(username):
 
 #finds transaction folder then creates one with user's name
 def save_user_transactions(username, transactions):
-    os.makedirs(TRANSACTIONS_FOLDER, exist_ok=True)
-    with open(os.path.join(TRANSACTIONS_FOLDER, f"{username}_transactions.json"), "w") as file:
-        json.dump(transactions, file)
+    try:
+        os.makedirs(TRANSACTIONS_FOLDER, exist_ok=True)
+        with open(os.path.join(TRANSACTIONS_FOLDER, f"{username}_transactions.json"), "w") as file:
+            json.dump(transactions, file)
+    except Exception as e:
+        print(f"Error: Saving transaction - {e}")
 
 #adds transaction to specific user
 def add_transaction(username, transaction_message):
-    transactions = load_user_transactions(username)
-    transactions.append(transaction_message)
-    save_user_transactions(username, transactions)
+    try:
+        transactions = load_user_transactions(username)
+        transactions.append(transaction_message)
+        save_user_transactions(username, transactions)
+    except Exception as e:
+        print(f"Error: Adding transaction - {e}")

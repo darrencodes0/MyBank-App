@@ -1,16 +1,35 @@
-.togglePassword{
-  height: 20px;
-  width: auto;
-  background-color: white;
+.box-label{
+  background-color: green;
+  font-size: 15px;
+  border-radius: 5px;
   border: solid;
   border-color: black;
   border-width: 1px;
+  margin-right: 5px;
+  padding: 3px;
+  color: white;
+}
+
+.bank-button{
+  margin-left: 90px;
+}
+
+.togglePassword{
+  height: 20px;
+  width: auto;
+  color: white;
+  background-color: green;
+  border: solid;
+  border-radius: 10px;
+  border-color: black;
+  border-width: 1px;
+  text-shadow: 1px 1px 1px black;
   cursor: pointer;
 }
 
 .togglePassword:hover{
-  color: white;
-  background-color: green;
+  color: black;
+  background-color: grey;
   opacity: 0.8;
 }
 

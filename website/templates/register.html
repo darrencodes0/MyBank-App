@@ -12,12 +12,12 @@
     <div class="middle-section">
         <form method="POST" action="{{ url_for('auth.registration') }}">
             <div class="form-set">
-                <label for="username" class="form__label">Username:</label>
+                <label for="username" class="form__label box-label">Username:</label>
                 <input type="text" name="username" id="username" class="form__label">
             </div>
 
             <div class="form-set">
-                <label for="password" class="form__label">Password:</label>
+                <label for="password" class="form__label box-label">Password:</label>
                 <input type="password" name="password" id="password" class="form__label">
                 <button type="button" onclick="togglePassword()" class="togglePassword">Toggle Password</button>
             </div>

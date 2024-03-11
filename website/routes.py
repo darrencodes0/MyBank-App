@@ -26,6 +26,7 @@ def login():
 
             if authenticated:
                 session['username'] = username
+                #establish current session's username as current user's username
                 return redirect(url_for("auth.accountPage")) 
             else:
                 return render_template("login.html",message="Login failed, Please check your user credentials")
@@ -125,7 +126,7 @@ def accountPage():
 
 @auth.route("/logout")
 def logout():
-    #removes all information from user session so next user doesn't inherit the same information
+    #removes all information fromso s session dictionary so next user doesn't inherit previous user's information
     try:
         session.pop('username')
     except KeyError:
@@ -154,7 +155,7 @@ def deposit():
     current_balance = session.get('balance')
     if request.method == "POST":
         amount = request.form.get("amount")
-    
+
         try:
             amount = float(amount)
         except ValueError:

@@ -69,7 +69,7 @@ body {
 
 .happy_guy {
   width: 40%;
-  height: auto; /* Maintain aspect ratio */
+  height: auto; 
   border-color: grey;
   border-width: 2px;
   border: solid;
@@ -86,7 +86,7 @@ body {
   background-color: green;
   color: white;
   border-radius: 10px;
-  border: 2px solid black; /* Adjust the border width here (2px in this example) */
+  border: 2px solid black;
   text-shadow: 2px 2px 3px black;
 }
 
@@ -96,8 +96,8 @@ body {
   padding: 10px 20px;
   margin-top: 20px;
   margin-bottom:20px;
-  background-color: white; /* Example button color */
-  color: black; /* Example text color */
+  background-color: white;
+  color: black; 
   text-decoration: none;
   border-radius: 5px;
   border-width: 1px;
@@ -108,7 +108,7 @@ body {
 }
 
 .get_started_button:hover {
-  background-color: green; /* Example color on hover */
+  background-color: green; 
   color: white;
 }
 

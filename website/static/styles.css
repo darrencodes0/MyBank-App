@@ -47,9 +47,10 @@ body{
 }
 
 .middle-section {
-  flex: 3; /* Takes up 75% of the container height */
+  flex: 3; 
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 100px;
   padding-bottom: 50px;
 }
@@ -59,9 +60,9 @@ body{
 }
 
 .bottom-section {
-  flex: 1; /* Takes up 25% of the container height */
+  flex: 1; 
   background-color: green;
-  border: 2px solid black; /* Shorthand for border properties */
+  border: 2px solid black; 
 }
 
 .form-set{
@@ -183,11 +184,12 @@ body{
   border: 2px solid black;
   border-radius: 4px;
   cursor: pointer;
-  display: inline-block; /* Ensure consistent rendering as inline-block */
+  display: inline-block; 
 }
 
 .bank-button:hover {
   background-color: green;
+  text-shadow: 2px 2px 2px black;
   color: white;
 }
 

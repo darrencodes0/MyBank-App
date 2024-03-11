@@ -2,7 +2,7 @@ from flask import Flask
 from routes import auth
 from sessionkey import SESSION_KEY
 
-#creates app and blueprint for routes
+#creates the app and blueprint for routes
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = SESSION_KEY

@@ -3,5 +3,8 @@
   padding: 10px;
   margin-left: 20px;
   text-shadow: 2px 2px 3px black;
+}
 
+.bank-button{
+  margin-left: 75px;
 }
