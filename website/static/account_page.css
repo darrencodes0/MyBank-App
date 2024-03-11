@@ -1,0 +1,34 @@
+.account-options{
+  display: flex;
+  flex-direction: column;
+}
+
+.account-options div {
+  background-color: white;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+#secret_word {
+  background-color: black;
+  color: black;
+}
+
+#secret_word:hover{
+  background-color: white;
+}
+
+.bank-button[title]:hover:after, #secret_word[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  color: white;
+  background-color: grey;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 16px;
+  margin-left: 2px;
+  padding: 5px 10px;
+  z-index: 9999;
+}
+
+

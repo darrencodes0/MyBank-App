@@ -1,13 +1,5 @@
-.box-label{
-  background-color: green;
+.bank-info{
   font-size: 15px;
-  border-radius: 5px;
-  border: solid;
-  border-color: black;
-  border-width: 1px;
-  margin-right: 5px;
-  padding: 3px;
-  color: white;
 }
 
 .bank-button{
@@ -35,4 +27,17 @@
 
 .togglePassword:active{
   opacity: 0.5;
+}
+
+.have-account-link{
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+.have-account-link:hover{
+  text-decoration: underline;
+}
+
+.have-account-link:active{
+  color: red;
 }

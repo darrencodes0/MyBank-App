@@ -15,7 +15,7 @@ except FileNotFoundError:
 # start of the application
 @auth.route("/", methods=["GET"])
 def start():
-    return render_template("frontpage.html")
+    return render_template("front_page.html")
 
 @auth.route("/login", methods=["GET", "POST"])
 def login():
@@ -33,7 +33,7 @@ def login():
 
     return render_template("login.html")
 
-@auth.route("/forgotpassword", methods=["GET", "POST"])
+@auth.route("/resetPassword", methods=["GET", "POST"])
 def reset_password():
     message = None
     
@@ -43,10 +43,10 @@ def reset_password():
         new_password = request.form.get("password")  # Get new password from form
 
         if not username:
-            return render_template("forgotPassword.html", message="Username is not provided")
+            return render_template("forgot_password.html", message="Username is not provided")
         
         if not secret_word:
-            return render_template("forgotPassword.html", message="Secret word is not provided")
+            return render_template("forgot_password.html", message="Secret word is not provided")
 
         if new_password:
             # Check if there's a number and special character is in password
@@ -60,19 +60,19 @@ def reset_password():
                     has_special = True
 
             if not (has_number and has_special):
-                return render_template("forgotPassword.html", message="Password must contain at least one special character and one number")
+                return render_template("forgot_password.html", message="Password must contain at least one special character and one number")
 
             resetted = reset_user_password(user_info, username, secret_word, new_password) 
 
             if resetted:
-                return render_template("forgotPassword.html",message="Password successfully changed")
+                return render_template("forgot_password.html",message="Password successfully changed")
             else:
-                return render_template("forgotPassword.html",message="Username or/and secret word was incorrect")
+                return render_template("forgot_password.html",message="Username or/and secret word was incorrect")
                   
         else:
-            return render_template("forgotPassword.html", message="Password is not provided")
+            return render_template("forgot_password.html", message="Password is not provided")
 
-    return render_template("forgotPassword.html", message=message)
+    return render_template("forgot_password.html", message=message)
 
 
 
@@ -122,7 +122,7 @@ def accountPage():
             session['balance'] = current_balance
             break
 
-    return render_template("accountpage.html", user=username, current_balance=current_balance, loan=loan, secret_word=secret_word)
+    return render_template("account_page.html", user=username, current_balance=current_balance, loan=loan, secret_word=secret_word)
 
 @auth.route("/logout")
 def logout():

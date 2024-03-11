@@ -9,6 +9,7 @@ body{
   display: flex;
   overflow: scroll;
   flex-direction: column;
+  font-family: serif
 }
 
 .name-header{
@@ -24,10 +25,8 @@ body{
   flex: 1;
   top: 0;
   left: 0;
-  background: green;
-  border: solid;
-  border-width: 2px;
-  border-color: black;
+  border-bottom: 1px solid rgba(0,0,0.1);
+  background-color: green;
   z-index: 999;
 }
 
@@ -39,6 +38,7 @@ body{
   border-width: 1px;
   margin-right: 5px;
   padding: 5px;
+  text-shadow: 2px 2px 2px black;
   color: white;
 }
 
@@ -62,7 +62,7 @@ body{
 .bottom-section {
   flex: 1; 
   background-color: green;
-  border: 2px solid black; 
+  border-top: 1px solid rgba(0,0,0.1);
 }
 
 .form-set{
@@ -174,6 +174,7 @@ body{
   align-items: center;
   justify-content: center;
   text-decoration: underline;
+  text-shadow: 2px 2px 3px black;
 }
 
 .bank-button {

@@ -3,7 +3,7 @@
 <head>
     <title>Account Page</title>
     <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="static/accountpage.css">
+    <link rel="stylesheet" href="static/account_page.css">
 </head>
 <body>
     <div class="top-section">
@@ -22,35 +22,35 @@
         <div class="account-options">
             <div>
                 <a href="{{ url_for('auth.deposit') }}">
-                <button class="bank-button" id="deposit-button" type="submit">Deposit Money</button>
+                <button class="bank-button" id="deposit-button" type="submit" title="Deposit money into your account">Deposit Money</button>
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.withdraw') }}">
-                <button class="bank-button" id="withdraw-button" type="submit">Withdraw Money</button>
+                <button class="bank-button" id="withdraw-button" type="submit" title="Withdraw money from your account">Withdraw Money</button>
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.transactions') }}">
-                <button class="bank-button" type="submit">See Transactions</button>
+                <button class="bank-button" type="submit" title="View all your transactions here">View Transactions</button>
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.loans') }}">
-                <button class="bank-button" type="submit">Request/Pay a Loan</button>
+                <button class="bank-button" type="submit" title="Want to request a loan or pay off a loan?">Request/Pay a Loan</button>
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.transfer') }}">
-                <button class="bank-button">Transfer/Send Money</button>
+                <button class="bank-button"  title="Want to transfer or send money to another user?">Transfer Money</button>
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.logout') }}">
-                <button class="bank-button">Logout</button>
+                <button class="bank-button" title="Log out of your account">Logout</button>
                 </a>
             </div>
-                <div id="secret_word">Your secret word to reset password: {{ secret_word }}</div>
+                <div id="secret_word" title="IMPORTANT: Make sure you remember this so you can reset your password!">Your secret word to reset password: {{ secret_word }}</div>
         </div>
     </div>
 
