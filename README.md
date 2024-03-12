@@ -34,3 +34,4 @@ Mac/Linux:
 
 ![transactions](https://github.com/darrencodes0/MyBank-App/assets/126924973/c22731e1-1a57-4f8e-adb9-50f093b4f382)
 
+If you would like to see more, follow the instructions and execute files from master branch
