@@ -22,8 +22,11 @@ Mac/Linux:
 
 # Images of Bank Application
 
-![frontpage](https://github.com/darrencodes0/MyBank-App/assets/126924973/edfc009c-bf18-4224-b4cb-08b0fb4da42f)
-![login](https://github.com/darrencodes0/MyBank-App/assets/126924973/2b03dc8e-897c-44aa-8b5a-147d095d76c4)
+![frontpage](https://github.com/darrencodes0/MyBank-App/assets/126924973/abc7883c-e363-4448-afee-de5b0712ff06)
+
+![login](https://github.com/darrencodes0/MyBank-App/assets/126924973/6370b79a-f868-4034-9f8a-a87a670ea205)
+
+![accountpage](https://github.com/darrencodes0/MyBank-App/assets/126924973/f7700303-dc49-4d62-819d-313b5a65ae5d)
 
 ![userinfo](https://github.com/darrencodes0/MyBank-App/assets/126924973/89d22453-b259-4a81-a008-0024d21f6858)
 
