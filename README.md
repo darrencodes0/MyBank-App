@@ -28,9 +28,6 @@ Mac/Linux:
 
 ![accountpage](https://github.com/darrencodes0/MyBank-App/assets/126924973/f7700303-dc49-4d62-819d-313b5a65ae5d)
 
-![userinfo](https://github.com/darrencodes0/MyBank-App/assets/126924973/89d22453-b259-4a81-a008-0024d21f6858)
-
-
 ![payingoffloan](https://github.com/darrencodes0/MyBank-App/assets/126924973/5d31c881-4acd-46fb-aa87-240a9cc6dd65)
 
 ![transfer](https://github.com/darrencodes0/MyBank-App/assets/126924973/431b3f84-6de4-4993-90f4-8e4f2503d3f4)
