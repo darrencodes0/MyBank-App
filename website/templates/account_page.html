@@ -11,10 +11,12 @@
     </div>
     <div class="middle-section">
         <div class="form-set">
-            <label for=""><span class="bank-info">Current Balance: ${{ current_balance }}</span></label>
+            <label for="" class="bank-info" title="This is your current balance">Current Balance: ${{ current_balance }}</label>
+            <p class="bank-info-label">This is your current bank balance</p>
         </div>
         <div class="form-set">
-            <label for=""><span class="bank-info">Loans owed: ${{ loan }}</span></label>
+            <label for="" class="bank-info">Loans owed: ${{ loan }}</label>
+            <p class="bank-info-label">This is the current amount in loans that you owe</p>
         </div>
         <div class="form-set">
             <label for="">What would you like to do?</label>
@@ -22,32 +24,44 @@
         <div class="account-options">
             <div>
                 <a href="{{ url_for('auth.deposit') }}">
-                <button class="bank-button" id="deposit-button" type="submit" title="Deposit money into your account">Deposit Money</button>
+                <button class="bank-button" id="deposit-button" type="submit">Deposit Money</button>
+                <p class="bank-info-label">Deposit money into your account</p>
+
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.withdraw') }}">
-                <button class="bank-button" id="withdraw-button" type="submit" title="Withdraw money from your account">Withdraw Money</button>
+                <button class="bank-button" id="withdraw-button" type="submit">Withdraw Money</button>
+                <p class="bank-info-label">Withdraw money from your account</p>
+
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.transactions') }}">
-                <button class="bank-button" type="submit" title="View all your transactions here">View Transactions</button>
+                <button class="bank-button" type="submit">View Transactions</button>
+                <p class="bank-info-label">View all your transactions here</p>
+
+
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.loans') }}">
-                <button class="bank-button" type="submit" title="Want to request a loan or pay off a loan?">Request/Pay a Loan</button>
+                <button class="bank-button" type="submit">Request/Pay a Loan</button>
+                <p class="bank-info-label">Request or Pay off a loan here</p>
+
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.transfer') }}">
-                <button class="bank-button"  title="Want to transfer or send money to another user?">Transfer Money</button>
+                <button class="bank-button">Transfer Money</button>
+                <p class="bank-info-label">Transfer or send money to another bank account or user</p>
                 </a>
             </div>
             <div>
                 <a href="{{ url_for('auth.logout') }}">
-                <button class="bank-button" title="Log out of your account">Logout</button>
+                <button class="bank-button">Logout</button>
+                <p class="bank-info-label">Log out of your account</p>
+
                 </a>
             </div>
                 <div id="secret_word" title="IMPORTANT: Make sure you remember this so you can reset your password!">Your secret word to reset password: {{ secret_word }}</div>

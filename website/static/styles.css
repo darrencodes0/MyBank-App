@@ -36,7 +36,6 @@ body{
   border: solid;
   border-color: black;
   border-width: 1px;
-  margin-right: 5px;
   padding: 5px;
   text-shadow: 2px 2px 2px black;
   color: white;
@@ -141,7 +140,7 @@ body{
 }
 
 .loan_icon:hover{
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .money_icon:hover{

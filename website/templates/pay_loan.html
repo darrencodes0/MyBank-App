@@ -11,8 +11,10 @@
     </div>
 
     <div class="middle-section">
-    <h1>You owe <span class="bank-info">{{loan}}$</span>in loans</h1>
-    <h1>Your balance is <span class="bank-info">{{ current_balance }}$</span></h1>
+    <img class="loan_icon" src="static/images/loan-signing.png">
+
+    <p class="bank-info">Loan amount owed: {{loan}}$</p>
+    <p class="bank-info">Your current balance is {{ current_balance }}$</p>
     <form method="POST">   
       <div class="form-set">
         <label for="amount" class="form__label">Amount to Pay:</label>

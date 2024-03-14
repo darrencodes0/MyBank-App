@@ -7,7 +7,8 @@ auth = Blueprint('auth', __name__)
 date_time = datetime.now()
 proper_datetime = date_time.strftime("%H:%M | %Y-%m-%d")
 
-try: # loads user_info if found file
+# loads user_info if found file
+try: 
     user_info = load_user_info()
 except FileNotFoundError:
     user_info = []
@@ -35,12 +36,10 @@ def login():
 
 @auth.route("/resetPassword", methods=["GET", "POST"])
 def reset_password():
-    message = None
-    
     if request.method == "POST":
         username = request.form.get("username")
         secret_word = request.form.get("secret_word")
-        new_password = request.form.get("password")  # Get new password from form
+        new_password = request.form.get("password")  # Gets new password to override current password
 
         if not username:
             return render_template("forgot_password.html", message="Username is not provided")
@@ -49,7 +48,7 @@ def reset_password():
             return render_template("forgot_password.html", message="Secret word is not provided")
 
         if new_password:
-            # Check if there's a number and special character is in password
+            # Checks if theres a number and special character is in password
             has_number = False
             has_special = False
 
@@ -87,7 +86,6 @@ def registration():
                 return render_template("register.html", message="Username is already taken")
 
         if new_password:
-            # Check if theres a number and special character is in password
             has_number = False
             has_special = False
 
@@ -114,11 +112,11 @@ def accountPage():
     for user_data in user_info:
         if user_data["username"] == username:
             #establishes info of the logged-in user to be of the current session
-            loan = user_data["loan"]
+            loan = "{:,}".format(user_data["loan"]) # formats by 3 digits (ex. 1,000 , 1,000,000)
             session['loan'] = loan
             secret_word = user_data["secret_word"]
             session['secret_word'] = secret_word
-            current_balance = user_data["balance"]
+            current_balance = "{:,}".format(user_data["balance"])
             session['balance'] = current_balance
             break
 
@@ -126,27 +124,7 @@ def accountPage():
 
 @auth.route("/logout")
 def logout():
-    #removes all information fromso s session dictionary so next user doesn't inherit previous user's information
-    try:
-        session.pop('username')
-    except KeyError:
-        pass
-    
-    try:
-        session.pop('balance')
-    except KeyError:
-        pass
-
-    try:
-        session.pop('secret_word')
-    except KeyError:
-        pass
-
-    try:
-        session.pop('loan')
-    except KeyError:
-        pass
-
+    session.clear()
     return redirect(url_for('auth.start'))
 
 
@@ -287,14 +265,15 @@ def request_loan():
         for user_data in user_info:
             if user_data["username"] == session['username']:
                 user_data["balance"] = round(user_data["balance"] + amount, 2)
-                user_data["loan"] = round(user_data["loan"] + (amount * 1.25), 2)  # 25% set interest rate to loan added
+                loan_given = round(amount * 1.18)
+                user_data["loan"]  = round(user_data["loan"] + round(amount * 1.18,2))  # 18% fixed interest rate to loan added 
                 current_balance = user_data["balance"]
                 loan = user_data["loan"]
                 session['balance'] = current_balance
                 session['loan'] = loan
                 save_user_info(user_info)  
                 add_transaction(session['username'], f"({proper_datetime}) - Added ${amount} in loans to your bank account")
-                return render_template("request_loan.html", current_balance=current_balance, message=f"Added ${amount} in loans to your bank account", loan=loan)
+                return render_template("request_loan.html", current_balance=current_balance, message=f"Added ${amount} to your bank account",loan_given=f"Additional loan amount added: ${loan_given}", loan=loan)
         return render_template("request_loan.html", current_balance=current_balance, message="User not found", loan=loan)
     return render_template("request_loan.html", current_balance=current_balance, loan=loan)
 

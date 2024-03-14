@@ -1,3 +1,25 @@
+.info-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .bank-button{
   margin-left: 75px;
+}
+
+.bank-info{
+  font-size: 30px;
+}
+
+#fixed-loan-label{
+  color: grey;
+  font-size: 25px;
+  border-bottom: 1px solid rgba(0,0,0.1);
+}
+
+#loans-rounded-label{
+  color: grey;
+  font-size: 25px;
+  margin-bottom: 20px;
 }

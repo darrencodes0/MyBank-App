@@ -1,3 +1,12 @@
 .bank-button{
   margin-left: 75px;
 }
+
+.bank-info{
+  font-size: 30px;
+}
+
+.loan_icon{
+  width: 100px;
+  height: auto;
+}

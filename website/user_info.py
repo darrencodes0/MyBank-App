@@ -47,8 +47,9 @@ def authenticate_user(user_info, username, password):
 def generate_secret_word():
     try:
         words = [
-                "car",
-                "apple",
+                "apple"
+                "pear",
+                "hidden",
                 "banana",
                 "orange",
                 "grape",
