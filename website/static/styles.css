@@ -190,6 +190,11 @@ body{
 .bank-button:hover {
   background-color: green;
   text-shadow: 2px 2px 2px black;
+  opacity: 0.8;
   color: white;
+}
+
+.bank-button:active {
+  opacity: 0.4;;
 }
 
