@@ -113,14 +113,14 @@ def accountPage():
         if user_data["username"] == username:
             #establishes info of the logged-in user to be of the current session
             loan = "{:,}".format(user_data["loan"]) # formats by 3 digits (ex. 1,000 , 1,000,000)
-            session['loan'] = loan
+            session['loan'] = user_data["loan"]
             secret_word = user_data["secret_word"]
             session['secret_word'] = secret_word
-            current_balance = "{:,}".format(user_data["balance"])
-            session['balance'] = current_balance
+            balance_shown = "{:,}".format(user_data["balance"])
+            session['balance'] = user_data["balance"]
             break
 
-    return render_template("account_page.html", user=username, current_balance=current_balance, loan=loan, secret_word=secret_word)
+    return render_template("account_page.html", user=username, current_balance=balance_shown, loan=loan, secret_word=secret_word)
 
 @auth.route("/logout")
 def logout():
