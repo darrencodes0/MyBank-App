@@ -1,5 +1,6 @@
 # Bank-Application 
 Program's files are within the master branch
+RECENT UPDATE: added two separate accounts (savings and checkings) with additional UI webpage changes
 
 ## Setup
 Install all the dependencies:
