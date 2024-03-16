@@ -14,13 +14,15 @@
     <img class="loan_icon" src="static/images/loan-signing.png">
 
     <p class="bank-info">Loan amount owed: {{loan}}$</p>
-    <p class="bank-info">Your current balance is {{ current_balance }}$</p>
+    <p><span class="bank-info">Checking Account Balance: ${{ checking_balance }}</span></p>
     <form method="POST">   
       <div class="form-set">
         <label for="amount" class="form__label">Amount to Pay:</label>
         <input type="number" name="amount" id="amount" class="form__label" step="0.01" min="0.01">
       </div>
-    
+
+      <input type="hidden" id="account_type" name="account_type" value="checking">
+
       <div class="form-set">
         <input class="bank-button" type="submit" value="Pay" step="0.01" min="0.01">
         <a href="{{ url_for('auth.loans') }}" class="bank-button">Back</a>
@@ -47,6 +49,5 @@
     </div>
 
     <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
-
 </body>
 </html>

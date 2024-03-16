@@ -1,0 +1,17 @@
+const current_balance = document.getElementById('balance');
+const checking_account = document.getElementById('checking');
+const savings_account = document.getElementById('savings');
+
+function updateAccountType() {
+  if (checking_account.checked) {
+      current_balance.textContent = 'Checking Balance: ' + currentBalance;
+  } else if (savings_account.checked) {
+      current_balance.textContent = 'Savings Balance: ' + currentBalance;
+  }
+}
+
+updateAccountType();
+
+// Add event listeners to update the balance when radio buttons are clicked
+checking_account.addEventListener('click', updateAccountType);
+savings_account.addEventListener('click', updateAccountType);

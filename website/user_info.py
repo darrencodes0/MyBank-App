@@ -76,7 +76,8 @@ def save_user_credientials(user_info, new_username, new_password):
         user_info.append({
             "username": new_username, 
             "password": encrypt_password(new_password), 
-            "balance": 0, 
+            "checking_balance": 0,
+            "savings_balance": 0,
             "loan": 0, 
             "secret_word": secret_word
         })

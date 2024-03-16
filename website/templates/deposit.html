@@ -11,11 +11,21 @@
     <h1 class="name-header">Deposit</h1>
   </div>
     <div class="middle-section">
-      <p><span class="bank-info">Your balance is ${{ current_balance }}</span></p>
+      <p><span class="bank-info">Checking Account Balance: ${{ checking_balance }}</span></p>
+      <img class="loan_icon" src="static/images/checking-account.png">
+      <p><span class="bank-info">Savings Account Balance: ${{ savings_balance }}</span></p>
+      <img class="loan_icon" src="static/images/piggybank.png">
     <form method="POST">   
       <div class="form-set">
         <label for="amount" class="form__label">Amount to Deposit:</label>
         <input type="number" name="amount" id="amount" class="form__label" step="0.01" min="0.01">
+      </div>
+
+      <div class="form-set">
+        <input type="radio" id="radio-buttons" name="account_type" value="checking" checked>
+        <label for="checking">Checking</label>
+        <input type="radio" id="radio-buttons" name="account_type" value="savings">
+        <label for="savings">Savings</label>
       </div>
     
       <div class="form-set">

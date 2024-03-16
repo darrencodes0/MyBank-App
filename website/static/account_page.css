@@ -1,3 +1,11 @@
+#checking_account_label{
+  margin-right: 15px;
+}
+
+#savings_account_label{
+  margin-left: 15px;
+}
+
 .account-options{
   display: flex;
   flex-direction: column;
