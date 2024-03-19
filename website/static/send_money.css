@@ -1,0 +1,30 @@
+.bank-info{
+  margin-left: 18px;
+  font-size: 30px;
+}
+
+#account-select-label{
+  margin-left: 65px;
+}
+
+.bank-button{
+  margin-left: 110px;
+}
+
+.bank-info-label{
+  position: absolute;
+  display: none;
+  color: white;
+  background-color: grey;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-left: -10px;
+  margin-top: 25px;
+  padding: 5px 10px;
+  text-shadow: 2px 2px 3px black;
+  z-index: 9999;
+}
+
+.bank-button:hover + .bank-info-label{
+  display: inline-block;
+}
