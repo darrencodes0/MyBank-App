@@ -39,6 +39,7 @@ Mac/Linux:
 
 ![transfer](https://github.com/darrencodes0/MyBank-App/assets/126924973/72bebaad-6e05-412b-98a6-3c6fd03530f9)
 
-![sendfunds](https://github.com/darrencodes0/MyBank-App/assets/126924973/0385d53e-9774-439a-bc15-a3cde1e83e95)
+![sendfunds](https://github.com/darrencodes0/MyBank-App/assets/126924973/6cad6b40-1a7a-48a9-9935-d74e432b1bf4)
+
 
 If you would like to see more, follow the instructions and execute files from master branch
