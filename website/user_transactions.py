@@ -1,31 +1,20 @@
-import json
-import os
+from database import transactions_collection
 
-#Folder storing transactions of each user
-TRANSACTIONS_FOLDER = "transactions_data"
-
-#looks for user folder in transaction folder and loads it
 def load_user_transactions(username):
-    try:
-        with open(os.path.join(TRANSACTIONS_FOLDER, f"{username}_transactions.json"), "r") as file:
-            return json.load(file)
-    except FileNotFoundError:
+    # Finds user info through username and grabs the information
+    user_transactions = transactions_collection.find_one({"username": username})
+    if user_transactions:
+        return user_transactions.get("transactions", [])
+    else:
         return []
 
-#finds transaction folder then creates one with user's name
-def save_user_transactions(username, transactions):
-    try:
-        os.makedirs(TRANSACTIONS_FOLDER, exist_ok=True)
-        with open(os.path.join(TRANSACTIONS_FOLDER, f"{username}_transactions.json"), "w") as file:
-            json.dump(transactions, file)
-    except Exception as e:
-        print(f"Error: Saving transaction - {e}")
+def add_user_transaction(username, transaction):
+    user_transactions = load_user_transactions(username)
+    user_transactions.append(transaction)
 
-#adds transaction to specific user
-def add_transaction(username, transaction_message):
-    try:
-        transactions = load_user_transactions(username)
-        transactions.append(transaction_message)
-        save_user_transactions(username, transactions)
-    except Exception as e:
-        print(f"Error: Adding transaction - {e}")
+    # inserts and updates new transaction
+    transactions_collection.update_one(
+        {"username": username},
+        {"$set": {"transactions": user_transactions}},
+        upsert=True
+    )

@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="static/front_page.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/icons.css">
 </head>
 <body>
+  <div class="website-container">
     <div class="top-section">
       <h1 class="name-header">My Bank</h1>
         <nav class="navigation-bar">
@@ -18,7 +20,7 @@
         </nav>
     </div>
     <div class="middle-section">
-        <div class='video_box'>
+      <div class='video_box'>
         <p class="info_box_message">Exclusive video from our sponser!</p>
         <iframe class="featured_video" width="640" height="360" src="https://www.youtube.com/embed/MZBeYSfIrLg" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -26,7 +28,9 @@
         <img class="happy_guy" src="static/images/guyhappy.jpg">
         <p class="info_box_message">Solve any financial problems at a touch of a button!</p>
       </div>
+      <div class="button-box">
         <a href="{{ url_for('auth.login') }}" class="get_started_button">Get Started</a>
+      </div>
     </div>
     <div class="bottom-section">
       <h1 class="trusted_bank_label">The most trusted bank in America</h1>
@@ -45,6 +49,6 @@
       <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
       <p class="bottom_label">This website is just a fun little project created by Darren</p>
     </div>
-    </div>
+  </div>
     </body>
 </html>

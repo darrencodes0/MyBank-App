@@ -4,9 +4,9 @@ const savings_account = document.getElementById('savings');
 
 function updateAccountType() {
   if (checking_account.checked) {
-      current_balance.textContent = 'Checking Balance: ' + currentBalance;
+      current_balance.textContent = 'Checking Balance: ' + checking_account;
   } else if (savings_account.checked) {
-      current_balance.textContent = 'Savings Balance: ' + currentBalance;
+      current_balance.textContent = 'Savings Balance: ' + savings_account;
   }
 }
 

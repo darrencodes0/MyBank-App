@@ -7,7 +7,6 @@ body{
   margin: 0;
   height: 100vh;
   display: flex;
-  overflow: scroll;
   flex-direction: column;
   font-family: serif
 }

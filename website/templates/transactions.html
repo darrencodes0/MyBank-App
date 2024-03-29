@@ -11,13 +11,13 @@
   </div>
   <div class="middle-section">
     {% if transactions %}
-    <ul class="transaction-list">
+      <ul class="transaction-list">
         {% for transaction in transactions %}
-            <li><span class="transaction-label">{{ transaction }}</span></li>
+          <li><span class="transaction-label">{{ transaction }}</span></li>
         {% endfor %}
-    </ul>
+      </ul>
     {% else %}
-    <p>No transactions in view</p>
+      <p>No transactions available.</p>
     {% endif %}
     <a href="{{ url_for('auth.accountPage') }}" class="bank-button">Back</a>
   </div>
