@@ -1,6 +1,6 @@
 # Bank-Application 
 Program's files are within the master branch  
-### RECENT UPDATE: added two separate accounts (savings and checkings) with additional UI webpage changes
+### RECENT UPDATE: reduced code repetition and fixed MongoDB database
 
 ## Setup
 Install all the dependencies:
