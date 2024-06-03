@@ -1,0 +1,168 @@
+body {
+  background-color: rgb(207, 198, 198);
+}
+
+.navigation-bar {
+  background-color:rgb(168, 164, 164);
+  padding: 7px 30px;
+  border-top: 1px solid rgba(0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0.1);
+}
+
+.navigation-buttons {
+  display: flex; 
+  margin: 0; 
+}
+
+.navigation-buttons li {
+  display: inline; 
+  flex: 1;
+  text-align: center;
+}
+
+.navigation-buttons li a {
+  color:white;
+  padding: 3px;
+  text-decoration: none; 
+  text-shadow: 2px 2px 3px black;
+}
+
+.navigation-buttons li a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.video_box{
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+}
+
+.featured_video{
+  border-color: grey;
+  border-width: 2px;
+}
+
+.info_box{
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+}
+
+.happy_guy {
+  width: 40%;
+  height: auto; 
+  border-color: grey;
+  border-width: 2px;
+  border: solid;
+  margin-left: 50px;
+  cursor: pointner;
+}
+
+@media screen and (min-width: 1080px) {
+  .happy_guy {
+    width: 40%; 
+    height: auto;
+  }
+
+  .video_box{
+    width: 80%;
+    height: auto;
+  }
+}
+
+.info_box_message {
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-shadow: 2px 2px 3px black;
+}
+
+
+.get_started_button {
+  display: inline-block;
+  width: 75px;
+  margin-top: 20px;
+  margin-bottom:20px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border-width: 1px;
+  border: solid;
+  border-color: black;
+  align-self: center;
+  cursor: pointer;
+}
+
+.get_started_button:hover {
+  background-color: green; 
+  text-shadow: 2px 2px 3px black;
+  opacity: 0.8;
+  color: white;
+}
+
+.get_started_button:active{
+  opacity: 0.4;
+}
+
+.bottom_label{
+  display: block;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+.get_started_button{
+  width: 78px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  border-width: 2px;
+  text-decoration: none;
+  padding: 5px;
+  margin-top: 10px; 
+  cursor: pointer;
+}
+
+.get_started_button:hover{
+  background-color: green;
+  color: white;
+}
+
+#social-media-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.image-button {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    width: 60px; 
+    height: 60px; 
+    border: solid; 
+    border-color: black;
+    border-width: 0.5px;
+    border-radius: 100px;
+    cursor: pointer; 
+}

@@ -1,0 +1,203 @@
+html{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: serif
+}
+
+#radio-buttons{
+  margin-left: 60px;
+}
+
+.name-header{
+  background-color: green ;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 3px black;
+}
+
+.top-section{
+  position: fixed;
+  width: 100%;
+  flex: 1;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0,0,0.1);
+  background-color: green;
+  z-index: 999;
+}
+
+.bank-info{
+  background-color: green;
+  border-radius: 5px;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  padding: 5px;
+  text-shadow: 2px 2px 2px black;
+  color: white;
+}
+
+.bank-info:hover{
+  opacity: 0.8;
+}
+
+.middle-section{
+  flex: 3; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.container{
+  flex: 1;
+}
+
+.bottom-section {
+  flex: 1; 
+  width: 100%;
+  background-color: green;
+  border-top: 1px solid rgba(0,0,0.1);
+}
+
+.form-set{
+  padding: 40px 20px;
+}
+
+.form-set:not(:last-of-type){
+  border-bottom: 1px solid rgba(0,0,0.1);
+}
+
+.form__input{
+  font-size: 1rem;
+}
+
+.form__select{
+  padding: 4px 2px;
+}
+
+.form__label{
+  margin-right: 20px;
+}
+
+.account-options{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.trusted_bank_label{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 3px black;
+}
+
+.money_icon{
+  background-color: skyblue;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+}
+
+.employee_icon{
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: white;
+}
+
+.stocks_icon{
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+}
+
+.loan_icon{
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.loan_icon:hover{
+  background-color: lightgreen;
+}
+
+.money_icon:hover{
+  background-color: black;
+}
+
+.employee_icon:hover{
+  background-color: yellow;
+}
+
+.stocks_icon:hover{
+  background-color: gray;
+}
+
+.icon_container{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: grey;
+  border: solid;
+  border-color: white;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.bottom_label{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  text-shadow: 2px 2px 3px black;
+}
+
+.bank-button {
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-shadow: 2px 2px 2px black;
+  cursor: pointer;
+  display: inline-block; 
+}
+
+.bank-button:hover {
+  opacity: 0.8;
+}
+
+.bank-button:active {
+  opacity: 0.4;;
+}
+

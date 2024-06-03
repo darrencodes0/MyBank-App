@@ -1,0 +1,18 @@
+.middle-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.bank-info{
+  font-size: 30px;
+  padding: 10px;
+  margin-left: 20px;
+  text-shadow: 2px 2px 3px black;
+}
+
+.bank-button{
+  margin-left: 75px;
+}

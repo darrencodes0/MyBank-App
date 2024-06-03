@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Paying Loan</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/pay_loan.css">
+</head>
+<body>
+    <div class="top-section">
+      <h1 class="name-header">Paying off loan</h1>
+    </div>
+
+    <div class="middle-section">
+    <img class="loan_icon" src="static/images/loan-signing.png">
+
+    <p class="bank-info">Loan amount owed: {{loan}}$</p>
+    <p><span class="bank-info">Checking Account Balance: ${{ checking_balance }}</span></p>
+    <form method="POST">   
+      <div class="form-set">
+        <label for="amount" class="form__label">Amount to Pay:</label>
+        <input type="number" name="amount" id="amount" class="form__label" step="0.01" min="0.01">
+      </div>
+
+      <input type="hidden" id="account_type" name="account_type" value="checking">
+
+      <div class="form-set">
+        <input class="bank-button" type="submit" value="Pay" step="0.01" min="0.01">
+        <a href="{{ url_for('auth.loans') }}" class="bank-button">Back</a>
+      </div>
+    </form>
+
+    <div>
+      {% if message %}
+        <p class="text">{{ message }}</p>
+    {% endif %}
+    </div>
+  </div>
+
+    <div class="bottom-section">
+      <h1 class="trusted_bank_label">The most trusted bank in America</h1>
+      <div class="icon_container">
+        <img class="money_icon" src="static/images/money-icon.png">
+        <img class="employee_icon" src="static/images/bank-employee.png">
+        <img class="stocks_icon" src="static/images/stocks-icon.png">
+      </div>
+      <div>
+        <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='auto_logout.js') }}"></script>
+</body>
+</html>

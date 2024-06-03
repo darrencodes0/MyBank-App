@@ -1,0 +1,20 @@
+.middle-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.bank-button{
+  margin-left: 75px;
+}
+
+.bank-info{
+  font-size: 30px;
+}
+
+.loan_icon{
+  width: 100px;
+  height: auto;
+}

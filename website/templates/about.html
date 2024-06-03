@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="static/front_page.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/icons.css">
+</head>
+<body>
+    <div class="top-section">
+      <h1 class="name-header">About</h1>
+        <nav class="navigation-bar">
+          <ul class="navigation-buttons">
+            <li><a href="{{ url_for('auth.login') }}">Start</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a href="{{ url_for('auth.registration') }}">Register</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="middle-section">
+        <div class='video_box'>
+        <p class="info_box_message">Us!</p>
+        <iframe class="featured_video" width="640" height="360" src="https://www.youtube.com/embed/zOuhAPypcSg" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="info_box">
+        <img class="happy_guy" src="static/images/united.jpg">
+        <p class="info_box_message">Our team will assist you with any needs!</p>
+      </div>
+    </div>
+      <div class="bottom-section">
+        <h1 class="trusted_bank_label">The most trusted bank in America</h1>
+        <div class="icon_container">
+          <img class="money_icon" src="static/images/money-icon.png">
+          <img class="employee_icon" src="static/images/bank-employee.png">
+          <img class="stocks_icon" src="static/images/stocks-icon.png">
+        </div>
+        <div>
+          <div id="social-media-row">
+            <a href="https://twitter.com/"><button id="twitter-icon" class="image-button" title="Follow us on Twitter!"></button></a>
+            <a href="https://facebook.com/"><button id="facebook-icon" class="image-button" title="Follow us on Facebook!"></button></a>
+            <a href="https://instagram.com/"><button id="instagram-icon" class="image-button" title="Follow us on Instagram!"></button></a>
+            <a href="https://github.com/darrencodes0"><button id="github-icon" class="image-button" title="Follow me on GitHub!"></button></a>
+            <a href="https://youtube.com/"><button id="youtube-icon" class="image-button" title="Follow us on YouTube!"></button></a>
+          </div>
+          <h1 class="bottom_label">Deposit, Withdraw, Transactions</h1>
+        </div>
+      </div>
+    
+      <script src="{{ url_for('static', filename='transfer_confirmation.js') }}"></script>
+</body>
+</html>
