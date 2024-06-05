@@ -1,5 +1,4 @@
-# Bank-Application 
-Program's files are within the master branch  
+# Bank-Application  
 ### RECENT UPDATE: reduced code repetition and fixed MongoDB database
 
 ## Setup
