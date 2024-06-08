@@ -4,8 +4,8 @@
 ## Setup
 Install all the dependencies:
 - pip install -r requirements.txt
-*Make sure you activate the virtual environment before installing dependencies
 
+! Make sure you activate the virtual environment before installing dependencies !
 
 ### To start Flask Application
 Make sure your directory includes the website  
