@@ -41,4 +41,3 @@ Mac/Linux:
 ![sendfunds](https://github.com/darrencodes0/MyBank-App/assets/126924973/6cad6b40-1a7a-48a9-9935-d74e432b1bf4)
 
 
-If you would like to see more, follow the instructions and execute files from master branch
